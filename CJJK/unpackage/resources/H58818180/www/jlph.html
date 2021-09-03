@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		* img{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+		.sub-nav a{
+			text-decoration: none;
+			color: black;
+			margin: 10px;
+			line-height: 28px;
+			padding: 11px;
+			font-family: "楷体";
+			font-size: 20px;
+		}
+		.sub-nav{
+			background-color: white;
+			border-bottom: solid 1px gray;
+			overflow: auto;
+			white-space: nowrap;
+		}
+		.sub-nav .active{
+			color: #0062CC;
+		}
+	</style>
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<!-- 标题 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">教练排行</h1>
+		</header>
+		<!-- 主体 -->
+		<div class="mui-content">
+			<!-- 横向滚动 -->
+		<nav class="sub-nav">
+			<a href="#" class="active">名师排行</a>
+			<a href="#">口碑排行</a>
+			<a href="#">个人推荐</a>
+		</nav>
+		<!-- 陪练教练 -->
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a >
+							<img src="./images/jiaolian.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">刘大龙--长征</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>
+							<img src="./images/jiaolian1.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">陈西西--路正</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a >
+							<img src="./images/jiaolian2.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">江海龙--大兴</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>
+							<img src="./images/jiaolian3.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">曾小敏--鑫安</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>
+							<img src="./images/jiaolian4.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">杨曾--驾了么</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a >
+							<img src="./images/jiaolian5.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">李小鸭--长城</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a >
+							<img src="./images/jiaolian6.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">吴琳--车之驾</h3>
+						</a>
+					</li>
+				</ul>
+		</div>
+	</body>
+
+</html>
+
+

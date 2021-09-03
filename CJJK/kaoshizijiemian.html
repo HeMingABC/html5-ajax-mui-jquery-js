@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<style>
+		.sz {
+			float: right;			/*右对齐*/
+			font-size: 18px;		/*调节字体大小*/
+			font-weight: bold;		/*加粗*/
+			margin-top: 4px;		/*调节高度*/
+			color: #000000;
+		}
+		.fh {
+			float: left;
+			font-size: 30px;
+			font-weight: bold;
+			margin-top: 0px;
+			color: #000000;
+		}
+		.mui-bar .mui-title{
+			font-size: 20px;
+		}
+		.text_info{
+			margin-top: 40px;
+			margin-left: 30px;
+		}
+		.anstext{
+			float: left;
+			margin-right:20px;
+		}
+		.anstext h5{
+			font-size: 20px;
+			color: #000000;
+			font-weight: bold;
+		}
+		.btn1 .mui-badge{
+			font-size: 20px;
+			margin-top: 30px;
+			margin-left: 40px;
+		}
+		.mui-bar .mui-btn{
+			margin-left: 30px;
+		}
+		.{
+			float: right;
+		}
+		.mui-bar span{
+			float: right;
+			padding:10px;
+			font-size: 20px;
+			font-weight: bold;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 顶部栏 -->
+	<<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">倒计时  45:20</h1>
+		<p><h5 class="sz">设置</h5></p>
+		<!-- <p><h5 class="fh"><a href="fuwu.html"><</a></h5></p>	 -->
+	</header> 
+	<div class="mui-content">
+		<div class="text_info">
+			<!-- 按钮显示 -->
+			<div class="mui-btn mui-btn-primary">
+				判断
+			</div>
+			<!-- 文字显示 -->
+			<div class="anstext">
+				<h5>驾驶机车遇到这种情况时，对向机车优先通过</h5>
+			</div>
+			<!-- 考试图片显示 -->
+			<div>
+				<img src="images/IMG_1500.png"/>
+			</div>
+		</div>
+		<div class="btn1">
+			<span class="mui-badge">A</span>&nbsp;&nbsp;&nbsp;&nbsp;正确
+			<br/>
+			<span class="mui-badge">B</span>&nbsp;&nbsp;&nbsp;&nbsp;错误
+		</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab">
+		<div class="mui-btn mui-btn-primary">
+			交卷
+		</div>
+		<span class="mui-badge" id="span2">x</span> 
+		<span class="mui-badge" id="span1">√</span>
+	</nav>
+</body>
+</html>

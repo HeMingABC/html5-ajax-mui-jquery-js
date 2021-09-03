@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		* img{
+			width: 140px;
+			height: 90px;
+		}
+		.sub-nav a{
+			text-decoration: none;
+			color: black;
+			margin: 4px;
+			line-height: 28px;
+			padding: 11px;
+			font-family: "楷体";
+			font-size: 20px;
+		}
+		.sub-nav{
+			background-color: white;
+			border-bottom: solid 1px gray;
+			overflow: auto;
+			white-space: nowrap;
+		}
+		.sub-nav .active{
+			color: #0062CC;
+		}
+	</style>
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<!-- 标题 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">驾校排行</h1>
+		</header>
+		<!-- 主体 -->
+		<div class="mui-content">
+			<!-- 横向滚动 -->
+		<nav class="sub-nav">
+			<a href="#" class="active">综合排行</a>
+			<a href="#">合格率排行</a>
+			<a href="#">全国排行榜</a>
+		</nav>
+		<!-- 陪练教练 -->
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">长征驾校</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao1.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">新驾了么</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao2.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">凡凡驾校</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao4.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">大兴驾校</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao3.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">魏之驾校</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/jiaxiao5.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">老五驾校</h3>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="./images/car2.jpg" >
+							<h3 style="float: right;margin-right: 15%;margin-top: 30px;">路正驾校</h3>
+						</a>
+					</li>
+				</ul>
+		</div>
+	</body>
+
+</html>
+

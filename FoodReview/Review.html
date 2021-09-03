@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./css/mui.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		/* 顶部图片样式 */
+		.headImg img{
+			width: 100%;
+			height: 100%;
+		}
+		/* 午餐字体样式 */
+		.mui-content p{
+			text-align: center;
+			font-size: 23px;
+			color: #555555;
+			border-width: 5px;
+			line-height: 40px;
+		}
+		
+		/* 评价区域滚动div样式 */
+		.mui-content .ReviewArea{
+			float: right;
+			background-color: white;
+			overflow: scroll;
+			height: 250px;
+			margin-top: 0px;
+			width: 96%;
+			margin-right: 2%;
+		}
+		/* 评价区域评分五角星样式 */
+		.ReviewArea img{
+			margin-top: 5px;
+			width: 22px;
+			height: 22px;
+		}
+		/* 底部区域按钮1样式 */
+		.btn{
+			border-color: #007AFF;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		/* 底部区域按钮2样式 */
+		.btn2{
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		
+		/* 底部区域提交按钮样式 */
+		.mui-btn-block{
+			margin-top: 100px;
+			padding-top:15px;
+			height: 50px;
+			width: 100px;
+		}
+		.mui-btn{
+			margin: auto;
+			margin-top: 90px;
+		}
+		
+		/* 评价区域内a标签(ajax获取后端数据显示)样式 */
+		.ReviewArea a{
+			float: left;
+			width: 160px;
+			padding-top: 10px;
+			color: #000000;
+			padding-left: 10px;
+			font-size: 20px;
+		}
+		/* 评价区域内五个五角星整体div样式 */
+		.area{
+			float: right;
+			margin-right: 10px;
+		}
+		/* 文字评价区样式 */
+		.mui-input-row{
+			width: 100%;
+			float: right;
+			margin-top: 20px;
+		}
+		.mui-content{
+			background-color: floralwhite;
+		}
+	</style>
+	<body>
+		<script src="./js/mui.js"></script>
+		<script src="./js/jquery-3.6.0.js"></script>
+		
+		<script type="text/javascript">
+			mui.init()
+// 得到第一个菜品信息
+		$.ajax({
+            type: "get",
+            url: "http://192.168.1.118:8899/Food/getOneFood/31",
+            async: true,
+            dataType:"json",
+            success: function(data){
+                console.log(data);
+                var item;
+                $.each(data,function (i,result) {
+                    item=result['foodName']
+                    $('.pool').append(item);
+                });
+            }
+        });
+// 得到第二个菜品信息
+		$.ajax({
+		           type: "get",
+		           url: "http://192.168.1.118:8899/Food/getOneFood/32",
+		           async: true,
+		           dataType:"json",
+		           success: function(data){
+		               console.log(data);
+						var item2;
+		               $.each(data,function (i,result) {
+		                   item2=result['foodName']
+							$('.pool2').append(item2);
+		               });
+		           }
+		       });
+// 进行评分并将评分分数赋给res(菜品1) res2(菜品2)
+			var spans=document.getElementsByTagName("span");
+			var res;
+			var res2;
+			var flag=5;
+			onload=function(){
+				for(var i=0;i<spans.length;i++)
+				{
+					spans[i].onmouseover=function(){
+						var id=parseInt(this.id);
+						for(var i=0;i<=id&&id<=4;i++){
+							spans[i].innerHTML="<img src='./img/wuxing-dianji.png' />";
+							res=i+1;
+							console.log(res);
+						}
+						for(var j=id+1;j<5;j++){
+							spans[j].innerHTML="<img src='./img/wuxing-moren.png' />";
+						}
+						if(id>=5){
+						for(var p=5;p<=id&&id<=9;p++){
+							spans[p].innerHTML="<img src='./img/wuxing-dianji.png' />";
+							res2=p-4;
+							console.log(res2);
+						}
+						for(var q=id+1;q<10;q++){
+							spans[q].innerHTML="<img src='./img/wuxing-moren.png' />";
+						}
+						}
+					}				      
+				}
+			}
+// 进行获取评分信息传入数据库
+			$(document).on("click", "#testAjax", function(){
+						var id1=$("#id1").val();
+						var time1=Date.now();
+						var word=$("#word").val();
+						var btnsss="*干净卫生*";
+						var name="测试菜";
+						//将点击事件切换
+						$(document).on("click","#b2",function(){
+							btnsss="*形态美观*";
+							console.log(btnsss);
+						});
+				        //获取的传入数据定义成json格式
+				        var info ={
+						  "reviewId":id1,
+				          "reviewFood":name,
+				          "reviewScore":res,
+						  "reveiwTime":time1,
+						  "reviewWord":btnsss+word,
+				        };
+				        $.ajax({
+				          url: "http://192.168.1.118:8899/Food/insert2",
+				          type: "post",
+				          datatype:"json",
+				          contentType:"application/json",
+				          data: JSON.stringify(info),
+				          //上面两行很关键，保证前后端数据一致
+				          success: function (data){
+				            console.log(data);
+				            alert("评价成功！");
+				          },
+				          error: function (){
+				            alert("评价失败！");
+				          }
+				        });
+						});						
+		</script>
+		
+		<div class="mui-content">
+			
+			<!-- 顶部图片 -->
+			<div class="headImg">
+				<img src="img/banner.png"/>
+			</div>
+			
+			<p>午餐</p>
+			 
+			<!-- 评价区域 滚动的div-->
+			<div class="ReviewArea">
+				<a class="pool"></a>
+				<div class="area">
+				<span class="span1" id="0"><img src="./img/wuxing-moren.png"></span>
+				<span id="1"><img src="./img/wuxing-moren.png"/></span>
+				<span id="2"><img src="./img/wuxing-moren.png"/></span>
+				<span id="3"><img src="./img/wuxing-moren.png"/></span>
+				<span id="4"><img src="./img/wuxing-moren.png"/></span>
+				</div>
+				<a class="pool2" id="foodname"></a>
+				<div class="area">
+				<span class="span1" id="5"><img src="./img/wuxing-moren.png"></span>
+				<span id="6"><img src="./img/wuxing-moren.png"/></span>
+				<span id="7"><img src="./img/wuxing-moren.png"/></span>
+				<span id="8"><img src="./img/wuxing-moren.png"/></span>
+				<span id="9"><img src="./img/wuxing-moren.png"/></span>
+				</div>
+			</div> 
+			
+				<!-- 文字评价区 传入数据-->
+				<div class="mui-input-row">
+					<input type="text" placeholder="请进行文字评价" id="word"/>
+				</div>
+
+		
+		
+		
+		<!-- 底部区域 -->
+		<button type="button" class="btn" id="b1">干净卫生</button>
+		<button type="button" class="btn2" id="b2">形态美观</button>
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="testAjax">提交评价</button>
+		
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-content h3{
+				color: red;
+				margin-left: 30px;
+			}
+			.mui-table-view-cell h2{
+				margin-left:10px;
+			}
+			.mui-table-view-cell h4{
+				float: right;
+			}
+			.mui-table-view-cell .mui-icon {
+				float: right;
+			}
+			.first_hand{
+				font-weight: bold;
+			}
+			.scend_hand{
+				color: #8F8F94;
+			}
+			.third_hand{
+				padding-left: 40px;
+			}
+			.mui-btn{
+				font-size: 20px;
+				margin-left: 55px;
+			}
+			.A123{
+				font-size: 20px;
+				color: white;
+				width: 80%;
+				margin-left: 42px;
+				background-color: #007AFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">考试预约</h1>
+		</header>
+		<!-- 主体 -->
+		<div class="mui-content">
+			<div>&nbsp;</div>
+			<h3>当前预约</h3>
+			<div>&nbsp;</div>
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div>
+							<h4>受理中</h4>
+							<span class="mui-icon mui-spinner"></span>
+						</div>
+					</li>
+				</ul>
+				<div>&nbsp</div>
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div>
+							<span class="first_hand">报考姓名：</span><span class="scend_hand">谭sir</span>
+						</div>
+						<h1></h1>			<!-- 等同于换行&nbsp; -->
+						<div>
+							<span class="first_hand">考试场地：</span><span class="scend_hand">二仙桥消防总队的隔壁</span>
+						</div>
+						<h1></h1>			<!-- 等同于换行&nbsp; -->
+						<div>
+							<span class="first_hand">考试场次：</span>
+						</div>
+						<h1></h1>			<!-- 等同于换行&nbsp; -->
+						<div>
+							<img class="third_hand" src="images/third_hand.png" />
+						</div>
+					</li>
+				</ul>
+				<div>&nbsp;</div>
+				<ul class="mui-table-view">
+						<button type="button" class="mui-btn mui-btn-blue">
+						注意事项
+						</button>
+						<button type="button" class="mui-btn mui-btn-blue">
+							考试导航
+						</button>
+					</ul>
+					<div><h1></h1></div>
+					<div>&nbsp;</div>
+					<button class="A123">取消预约</button>
+		</div>
+	</body>
+
+</html>

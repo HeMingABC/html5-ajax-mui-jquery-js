@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜 品 评 价</title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./css/mui.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		/* 顶部图片样式 */
+		.headImg img {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* 午餐字体样式 */
+		.mui-content p {
+			text-align: center;
+			font-size: 23px;
+			color: #333333;
+			border-width: 10px;
+			line-height: 40px;
+		}
+
+		/* 评价区域滚动div样式 */
+		.mui-content .ReviewArea {
+			float: right;
+			background-color: #faf8f3;
+			overflow: scroll;
+			height: 250px;
+			margin-top: 0px;
+			width: 96%;
+			margin-right: 2%;
+			/* border: 2px dashed #AAAAAA; */
+			//dashed为虚线
+			border-radius: 10px;
+		}
+
+		/* 评价区域评分五角星样式 */
+		.ReviewArea img {
+			margin-top: 10px;
+			width: 22px;
+			height: 22px;
+		}
+
+		/* 底部区域按钮1样式 */
+		.btn {
+			border-color: #BBBBBB;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+
+		/* 底部区域按钮2样式 */
+		.btn2 {
+			border-color: #BBBBBB;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+
+
+		/* 评价区域内p标签(ajax获取后端数据显示)样式 */
+		.ReviewArea p {
+			float: left;
+			width: 330px;
+			color: #000000;
+			padding-left: 10px;
+			font-size: 20px;
+			line-height: 30px;
+			text-align: left;
+		}
+
+		/* 文字评价区样式 */
+		.text {
+			width: 96%;
+			float: right;
+			margin-right: 2%;
+			margin-top: 10px;
+			height: 150px;
+			margin-bottom: 10px;
+		}
+
+		.text textarea {
+			border: #AAAAAA dashed 1.5px;
+			height: 148px;
+			resize: none; //禁止拖动		
+
+		}
+
+		/* 输入字数span样式 */
+		.size {
+			float: right;
+		}
+
+		/* 主体body设置 */
+		.mui-content {
+			background-color: #faf8f3;
+			height: 850px;
+		}
+
+		/* 底部区域提交按钮样式 */
+		.mui-btn-block {
+			margin-top: 100px;
+			padding-top: 8px;
+			height: 40px;
+			width: 130px;
+		}
+
+		.mui-btn {
+			margin: auto;
+			margin-top: 25%;
+			background-color: #337bbc;
+		}
+		
+		/* 设置div盒子边框阴影 */
+		.card{
+			width: 96%;
+			float: right;
+			margin-right: 2%;
+			box-shadow: 2px 2px 2px 2px #DDDDDD;
+			border-radius: 8px;
+		}
+	</style>
+	<body>
+		<script src="./js/mui.js"></script>
+		<script src="./js/jquery-3.6.0.js"></script>
+
+		<script type="text/javascript">
+			mui.init()
+			//得到数据			
+			$.ajax({
+				type: "get",
+				url: "http://10.6.119.50:8899/Food/getAllFood",
+				async: true,
+				dataType: "json",
+				success: function(data) {
+					console.log(data);
+					var item;
+					$.each(data, function(i, result) {
+						item = "<tr foodid='" + result['id'] + "' nameid='" + result['foodName'] +
+							"'><td width='350px'>" + result['foodName'] +
+							"</td><td style='padding-right:7px'>" + "<span id='0'>" +
+							"<img src='./img/wuxing-moren.png'/>" + "</span>" +
+							"</td><td style='padding-right:7px'>" + "<span id='1'>" +
+							"<img src='./img/wuxing-moren.png'/>" + "</span>" +
+							"</td><td style='padding-right:7px'>" + "<span id='2'>" +
+							"<img src='./img/wuxing-moren.png'/>" + "</span>" +
+							"</td><td style='padding-right:7px'>" + "<span id='3'>" +
+							"<img src='./img/wuxing-moren.png'/>" + "</span>" +
+							"</td><td>" + "<span id='4'>" + "<img src='./img/wuxing-moren.png'/>" +
+							"</span>" +
+							"</td></tr>";
+						$('.pool').append(item);
+					});
+					$(".pool tr td span").on("click", function() {
+						$(this).parent().parent().find("td span").each(function() {
+							$(this).removeAttr("isck");
+							$(this).find("img").attr("src", "./img/wuxing-moren.png");
+						})
+						if ($(this).attr("isck") == undefined) {
+							var id = parseInt($(this).attr("id"));
+							for (var i = 0; i <= id; i++) {
+								$(this).parent().parent().find("td span[id='" + i + "']").attr("isck", "ok");
+								$(this).parent().parent().find("td span[id='" + i + "']").find("img").attr(
+									"src", "./img/wuxing-dianji.png");
+							}
+						}
+					})
+				},
+			});
+
+			// 控制输入框textarea字数
+			var maxlength = 255;
+
+			function sizecontrol() {
+				var s = document.getElementById("word").value.length;
+				if (s <= maxlength) {
+					document.getElementById("control").innerHTML = "已输入:" + s + "/" + maxlength + "字";
+				} else {
+					document.getElementById("word").value = document.getElementById("word").value.substr(0, maxlength);
+				}
+			}
+
+			// 进行获取评分信息传入数据
+			$(document).on("click", "#testAjax", function() {
+				var json = {
+					cds: [],
+					pj: ''
+				};
+				var cd = [];
+				$(".pool tr").each(function() {
+					var mm = 0;
+					$(this).find("td").each(function() {
+						if ($(this).find("span").attr("isck") == "ok") {
+							mm++;
+						}
+					})
+					var v = {
+						keyid: $(this).attr("foodid"),
+						name: $(this).attr("nameid"),
+						jf: mm,
+					}
+					cd.push(v);
+					var ids = v.keyid;
+					var time1 = Date.now();
+					var word = $("#word").val();
+					var score=v.jf;
+					var name = v.name;
+					var info = {
+						"reviewId": ids,
+						"reviewFood": name,
+						"reviewScore": score,
+						"reveiwTime": time1,
+						"reviewWord": btnsss +  btnsss2 + word,
+					};
+					$.ajax({
+						url: "http://10.6.119.50:8899/Food/insert2",
+						type: "post",
+						datatype: "json",
+						contentType: "application/json",
+						data: JSON.stringify(info),
+						//上面两行很关键，保证前后端数据一致
+						success: function(data) {
+							console.log(data);
+							window.location.href="return.html";
+						},
+					});
+				})
+				console.log(cd);
+				json.cds = cd;
+			});
+			// 点击按钮变色1
+			var clickSum = 1;
+			var btnsss = "";
+
+			function colorchange() {
+				clickSum++;
+				if (clickSum % 2 == 0) {
+					document.getElementById("b1").style.borderColor = "#337BBC";
+					btnsss = " {干净卫生} ";
+				} else {
+					document.getElementById("b1").style.borderColor = "#BBBBBB";
+					btnsss = "";
+				}
+			}
+			// 点击按钮变色2
+			var clickSum2 = 1;
+			var btnsss2 = "";
+
+			function colorchange2() {
+				clickSum2++;
+				if (clickSum2 % 2 == 0) {
+					document.getElementById("b2").style.borderColor = "#337BBC";
+					btnsss2 = " {形态美观} ";
+				} else {
+					document.getElementById("b2").style.borderColor = "#BBBBBB";
+					btnsss2 = "";
+				}
+			}
+		</script>
+		<div class="mui-content">
+
+			<!-- 顶部图片 -->
+			<div class="headImg">
+				<img src="img/banner.png" />
+			</div>
+			
+			<p>午餐</p>
+			<div class="card">
+			<!-- 评价区域 滚动的div-->
+			<div class="ReviewArea">
+				<p class="pool"></p>
+			</div>
+			
+			<!-- 文字评价区 传入数据-->
+			<div class="text">
+				<textarea id="word" placeholder="可以从菜品口味环境等方面进行文字评价" onkeyup="sizecontrol()"></textarea>
+				<span id="control" class="size"></span>
+			</div>
+			</div>
+
+			<!-- 底部区域 -->
+			<button type="button" class="btn" id="b1" onclick="colorchange()">干净卫生</button>
+			<button type="button" class="btn2" id="b2" onclick="colorchange2()">形态美观</button>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="testAjax">提交评价</button>
+		</div>
+	</body>
+
+</html>

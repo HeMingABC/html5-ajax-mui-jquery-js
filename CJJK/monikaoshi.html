@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-content .head{
+				width: 100px;
+				height: 100px;
+				border-radius: 50px;
+				background-image: url(images/jiaolian3.jpg);
+				background-size: cover;
+				float: left;
+				margin:10px;
+				position: absolute;
+				top: 80px;
+				left: 130px;
+			}
+			.h3one{
+				position: absolute;
+				top: 200px;
+				left: 165px;
+			}
+			.h4one{
+				position: absolute;
+				top: 250px;
+				left: 95px;
+			}
+			.spanone{
+				color: red;
+			}
+			.divone{
+				position: absolute;
+				top: 290px;
+				left: 95px;
+			}
+			.divtwo {
+				position: absolute;
+				top: 390px;
+				left: 70px;
+			}
+			.divthree {
+				position: absolute;
+				top: 390px;
+				left: 220px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">模拟考试</h1>
+		</header>
+		<div class="mui-content">
+			<span class="head"></span>
+			<h3 class="h3one">李sir</h3>
+			<h4 class="h4one">科一小轿车 | 拉布拉多驾校</h4>
+			<div class="divone">
+				<div>
+					<span>考试题库：</span><span class="spanone">100分</span>
+				</div>
+				<div>
+					<span>考试时间：</span><span class="spanone">45分钟</span>
+				</div>
+				<div>
+					<span>合格标准：</span><span class="spanone">满分100分&nbsp;&nbsp;&nbsp;&nbsp;90分合格</span>
+				</div>
+			</div>
+			<div class="divtwo">
+				<button type="button" class="mui-btn mui-btn-blue">全真模拟考试</button>
+			</div>
+			<div class="divthree">
+				<button type="button" class="mui-btn mui-btn-blue">优先考未做题</button>
+			</div>
+			
+		</div>
+	</body>
+
+</html>

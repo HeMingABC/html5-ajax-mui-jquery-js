@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+
+		</head>
+		<style type="text/css">
+			.mui-slider img{
+				width: 100%;
+				height: 200px;
+			}
+			.mui-content input{
+				margin-top: 0px;
+				margin-bottom: 0px;
+				float: left;
+				background-color: white;
+				width: 85%;
+			}
+			.mui-content{
+				background-color: white;
+			}
+			.FuWuBtn{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			.news{
+				height: 435px;
+			}
+		</style>
+		
+		<body>
+		<!-- 标题栏 -->
+	<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">首页</h1>
+		<!-- 定位城市 -->
+		<ul class="mui-table-view" style="width: 85px;float: left;background-color: whitesmoke;">
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right" href="#">城市</a>
+				<div class="mui-collapse-content">
+					<a>成都</a>
+					<a>重庆</a>
+					<a>南充</a>
+					<a>泸州</a>
+					<a>广元</a>
+					<a>达州</a>
+					<a>西昌</a>
+					<a>攀枝花</a>
+					<a>雅安</a>
+					<a>眉山</a>
+				</div>
+			</li>
+		</ul>
+		<!-- 消息提示 -->
+	<a href="info.html" style="float: right;color:#929292"><span class="mui-icon mui-icon-email"></span></a>
+	</header>
+	
+			<!-- 主体 -->
+			<div class="mui-content">
+				<!-- 搜索栏 -->
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="长征驾校">
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="border-color:#2187E7;background-color:white;border-radius: 100px;">搜索</button>
+				</div>
+			</div>
+			
+			<!-- 轮播广告 -->
+			<div id="slider" class="mui-slider">
+			  <div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+				  <a href="lbzym.html">
+					<img src="./images/lunbo1.png">
+				  </a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+				  <a href="lbzym.html">
+					<img src="./images/car.jpg">
+				  </a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+				  <a href="lbzym.html">
+					<img src="./images/car1.jpg">
+				  </a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+				  <a href="lbzym.html">
+					<img src="./images/car2.jpg">
+				  </a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+				  <a href="lbzym.html">
+					<img src="./images/car.jpg">
+				  </a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+				  <a href="lbzym.html">
+					<img src="./images/lunbo1.png">
+				  </a>
+				</div>
+			  </div>
+			  <div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			  </div>
+			</div>
+			
+			<!--  服务按钮  -->
+			<div class="FuWuBtn" style="float: right;width: 14%;margin-right: 4%;">
+			<a href="plfw.html"><span class="mui-icon mui-icon-chat"></span>
+			 <p>陪练</p>
+			 </a>
+			 </div>
+			 <div class="FuWuBtn" style="float: right;width: 14%;margin-right: 4%;">
+			 <a href="bxxz.html"><span class="mui-icon mui-icon-circle"></span>
+			  <p>班型</p>
+			  </a>
+			  </div>
+			<div class="FuWuBtn" style="float: right;width: 14%;margin-right: 4%;">
+			<a href="jlph.html"><span class="mui-icon mui-icon-contact-filled"></span>
+			 <p>教练</p>
+			 </a>
+			 </div>
+			 <div class="FuWuBtn" style="float: right;width: 14%;margin-right: 4%;">
+			 <a href="xcyh.html"><span class="mui-icon mui-icon-phone"></span>
+			  <p>试学</p>
+			  </a>
+			  </div>
+				<div class="FuWuBtn" style="float: right;width: 14%;margin-right: 4%;">
+				<a href="jxph.html"><span class="mui-icon mui-icon-bars"></span>
+				 <p>驾校</p>
+				 </a>
+				 </div>
+				<div class="mui-segmented-control" style="background-color:#2187E7;border-color: #2187E7;">
+					<a href="bwzjx.html" ><p style="font-size: 20px;text-align: center;color: white;margin-top: 5px;">帮你找驾校</p></a>
+				</div>
+				<a href="xcyh.html"><img src="./images/guanggao.jpg" style="width: 100%;height: 150px;"></a>
+				<!-- 消息列表 -->
+				<div class="news">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao.jpg">
+							<div class="mui-media-body">
+								路正驾校
+								<p class="mui-ellipsis">秉承服务，用心教学，怀揣期望而来，收获满意而归。</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao1.jpg">
+							<div class="mui-media-body">
+								大成驾校
+								<p class="mui-ellipsis">搭建驾校中的航母，驶向安全的彼岸。</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao2.jpg">
+							<div class="mui-media-body">
+							    乘风驾校
+								<p class="mui-ellipsis">多点沟通，少点抱怨，多点理解，少点争执。</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao3.jpg">
+							<div class="mui-media-body">
+							    凡凡驾校
+								<p class="mui-ellipsis">好的学校，好的教练，才能成就一名好的司机。</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao4.jpg">
+							<div class="mui-media-body">
+							    瑞瑞驾校
+								<p class="mui-ellipsis">健康是福，风风雨雨共度，技术保平安，诚心做朋友，真心换实惠。</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="infomation.html">
+							<img class="mui-media-object mui-pull-left" src="./images/jiaxiao5.jpg">
+							<div class="mui-media-body">
+							    晶晶驾校
+								<p class="mui-ellipsis">精心施教，贴心服务，让您更好的体验到学车乐趣。</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				</div>
+			<!-- 底部导航 -->
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" href="index.html">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a class="mui-tab-item" href="xuexi.html">
+					
+					<span class="mui-icon mui-icon-compose"></span>
+					<span class="mui-tab-label">学习</span>
+				</a>
+				<a class="mui-tab-item" href="fuwu.html">
+					<span class="mui-icon mui-icon-chatboxes"></span>
+					<span class="mui-tab-label">服务</span>
+				</a>
+				<a class="mui-tab-item" href="me.html">
+					<span class="mui-icon mui-icon-contact-filled"></span>
+					<span class="mui-tab-label">我的</span>
+				</a>
+			</nav>
+			</div>
+	</body>
+
+</html>

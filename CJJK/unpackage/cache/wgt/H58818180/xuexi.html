@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-table-view button{
+				margin-right: 160px;
+			}
+			.mui-table-view img{
+				width: 100%;
+				height: 100%;
+			}
+			.w .mui-btn{
+				font-size:25px;
+				position: absolute;
+				left: 140px;
+				top: 320px;
+			}
+			.mui-content h3{
+				font-size: 22px;
+				margin-left: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">学习</h1>
+		</header>
+		<!-- 主题 -->
+		<div class="mui-content">
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<h4>当前尚未打卡</h4><button type="button" class="mui-btn mui-btn-blue">去打卡</button>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row mui-radio ">
+							<label>科目一</label>
+							<input name="radio" type="radio" checked>
+						</div>
+						<div class="mui-input-row mui-radio ">
+							<label>科目二</label>
+							<input name="radio" type="radio" >
+						</div>
+						<div class="mui-input-row mui-radio ">
+							<label>科目三</label>
+							<input name="radio" type="radio" >
+						</div>
+						<div class="mui-input-row mui-radio ">
+							<label>科目四</label>
+							<input name="radio" type="radio" >
+						</div>
+					</li>
+					<img src="./images/aaaaa.png" />
+					<div class="w">
+						<button type="button" class="mui-btn mui-btn-blue">选择科目</button>
+					</div>	
+				</ul>
+			<div><h2>&nbsp;</h2></div>
+			<h3>学习进度</h3>
+			<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="kechengfuxi.html">
+							<img src="./images/jdtj.png" />
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="xuanzekemu.html">
+							<img src="./images/kcfx.png" />
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="xuexishezhi.html">
+							<img src="./images/xxsz.png" />
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" >
+							<img src="./images/xxsz.png" />
+						</a>
+					</li>
+				</ul>
+		</div>
+		<!-- 底部导航 -->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item " href="index.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="xuexi.html">
+				<span class="mui-icon mui-icon-compose mui-active"></span>
+				<span class="mui-tab-label">学习</span>
+			</a>
+			<a class="mui-tab-item " href="fuwu.html">
+				<span class="mui-icon mui-icon-chatboxes"></span>
+				<span class="mui-tab-label">服务</span>
+			</a>
+			<a class="mui-tab-item" href="me.html">
+				<span class="mui-icon mui-icon-contact-filled"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</body>
+
+</html>

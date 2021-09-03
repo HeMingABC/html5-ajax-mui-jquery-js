@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="css/gongqiuquan.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			.mui-table-view:after { height: 0; }
+
+			img { width: 100%; }
+			
+			i, b, em { font-style: normal; }
+			
+			ul, li { list-style: none; margin: 0; padding: 0; }
+			
+			/*.mui-bar { background-color: #1ca5ff; }*/
+			
+			/*.mui-title { color: #fff; }*/
+			
+			.mui-bar a { width: 40px; color: #fff; font-weight: normal !important; }
+			.mui-bar a img { width: 100%; }
+			
+			.mui-table-view:before { height: 0; }
+			
+			.mui-table-view-cell:after { left: 0; background: #eee; }
+			
+			.productList li a { padding: 11px 10px !important; }
+			.productList li a img { max-width: 100px !important; height: 75px !important; }
+			.productList li a .title { display: inline-block; margin-bottom: 10px; }
+			.productList li a .mui-ellipsis { overflow: hidden; white-space: normal; }
+			.productList li a .mui-ellipsis i { margin-right: 10px; }
+			.mui-bar-nav~.mui-content .mui-slider.mui-fullscreen{
+				top: 94px;
+				
+			}
+			.mui-fullscreen .mui-segmented-control ~ .mui-slider-group{
+				padding-bottom: 44px !important;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">消息</h1>
+		</header>
+		<div id="upbox" class="mui-content">
+			<div class="search">
+				<div class="mui-input-row mui-search">
+				    <input type="search" class="mui-input-clear" placeholder="搜索">
+				</div>
+			</div>
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll topMenu row-c">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							新收到
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							收藏
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper box">
+							<div class="mui-scroll">
+								<ul class="mui-table-view list out">
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>新</i><span>《成都驾校欢迎您》</span></div><b>热门推荐</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           		惺惺惜惺惺想是大家红打卡机会等哈会计师档卡户打卡机
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">交管12123</i>
+							        		</dt>
+							        		<dd class="contact">联系方式</dd>
+							        	</dl>
+							        </li>
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>新</i><span>《最新驾校新规》</span></div><b>热门推荐</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           			回家快递号哈萨克接电话卡安徽德生科技安徽的接口大家开始打卡大家啊登记卡
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">车管所</i>
+							        		</dt>
+							        		<dd class="friend">联系方式</dd>
+							        	</dl>
+							        </li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>新</i><span>《最新驾校新规》</span></div><b>热门推荐</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			回家快递号哈萨克接电话卡安徽德生科技安徽的接口大家开始打卡大家啊登记卡
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">车管所</i>
+											</dt>
+											<dd class="friend">联系方式</dd>
+										</dl>
+									</li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>新</i><span>《最新驾校新规》</span></div><b>热门推荐</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			回家快递号哈萨克接电话卡安徽德生科技安徽的接口大家开始打卡大家啊登记卡
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">车管所</i>
+											</dt>
+											<dd class="friend">联系方式</dd>
+										</dl>
+									</li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>新</i><span>《最新驾校新规》</span></div><b>热门推荐</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			回家快递号哈萨克接电话卡安徽德生科技安徽的接口大家开始打卡大家啊登记卡
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">车管所</i>
+											</dt>
+											<dd class="friend">联系方式</dd>
+										</dl>
+									</li>
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>新</i><span>教练为何频频被举报</span></div><b>热门推荐</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           			水电卡计划和的撒客家话打卡机爱的哈会计师的好看安徽的卡时间段好看
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b>来自：<i class="company">成都最新新闻</i>
+							        		</dt>
+							        		<dd class="del"><img src="img/sahnchu@2x.png"/></dd>
+							        	</dl>
+							        </li>
+							       
+							    </ul>
+								    	
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper box">
+							<div class="mui-scroll">
+								<ul class="mui-table-view list in">
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目一教程</span></div><b>热门收藏</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           			多刷题
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+							        		</dt>
+							        		<dd>05-18 15:00</dd>
+							        	</dl>
+							        </li>
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目二教程</span></div><b>热门收藏</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           			多开车
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+							        		</dt>
+							        		<dd>05-18 15:00</dd>
+							        	</dl>
+							        </li>
+							        <li class="mui-table-view-cell">
+							           <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目三</span></div><b>热门收藏</b></h4>
+							           <div class="row-c data">
+							           		<p class="col-c">
+							           			多开车，多刷题
+							           		</p>
+							           </div>
+							        	<dl class="row-lr">
+							        		<dt class="row-l">
+							        			<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+							        		</dt>
+							        		<dd class="del"><img src="img/sahnchu@2x.png"/></dd>
+											<dd>05-18 15:00</dd>
+							        	</dl>
+							        </li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目三</span></div><b>热门收藏</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			多开车，多刷题
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+											</dt>
+											<dd class="del"><img src="img/sahnchu@2x.png"/></dd>
+											<dd>05-18 15:00</dd>
+										</dl>
+									</li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目三</span></div><b>热门收藏</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			多开车，多刷题
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+											</dt>
+											<dd class="del"><img src="img/sahnchu@2x.png"/></dd>
+											<dd>05-18 15:00</dd>
+										</dl>
+									</li>
+									<li class="mui-table-view-cell">
+									   <h4 class="row-lr"><div class="row-l"><i>❤</i><span>科目三</span></div><b>热门收藏</b></h4>
+									   <div class="row-c data">
+									   		<p class="col-c">
+									   			多开车，多刷题
+									   		</p>
+									   </div>
+										<dl class="row-lr">
+											<dt class="row-l">
+												<em><img src="img/baby-88.png"/></em><b><img src="img/vip.png"/></b><i class="company">杨鹤鸣</i>
+											</dt>
+											<dd class="del"><img src="img/sahnchu@2x.png"/></dd>
+											<dd>05-18 15:00</dd>
+										</dl>
+									</li>
+							    </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.pullToRefresh.js"></script>
+		<script src="js/mui.pullToRefresh.material.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			mui.init({
+				gestureConfig:{
+					longtap: true//可以通过参数配置来确定想要监听的事件
+				}
+			});
+			mui('.mui-bar-tab').on('tap','a',function(){document.location.href=this.href;});
+			
+			var index=0;
+			var a=document.getElementsByClassName('mui-control-item');
+			for(var i=0;i<a.length;i++){
+				a[i].setAttribute('zdy',i);
+			}
+			//点击导航跳转相应的div
+			mui('.topMenu').on('tap','.mui-control-item',function(){
+				index=this.getAttribute('zdy');
+				mui('#slider').slider().gotoItem(index);
+			})
+			//进来页面就跳到相应的div
+			mui('#slider').slider().gotoItem(index);//进来页面的时候跳到指定的项目
+			(function($) {
+				//阻尼系数，系数越大摩擦力越大
+				var deceleration = mui.os.ios?0.00003:0.000009;
+				//初始化上拉下拉组件，必须初始化，否则无法上下滚动
+				$('.mui-scroll-wrapper').scroll({//加载下拉组件并配置一些参数
+					bounce: true,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				var toBot;
+				$('.box')[0].addEventListener('scroll',function(e){
+					if(e.detail.y<e.detail.maxScrollY-50){
+						toBot=true;
+					}
+					//上拉加载
+					if(toBot==true&&e.detail.y==e.detail.maxScrollY){
+						toBot=false;
+						console.log('拉到底了，加载数据');
+						
+					}
+					if(e.detail.y>100){
+						toTop=true;
+						console.log(toTop)
+					}
+					//下拉刷新
+					if(e.detail.y==0&&toTop==true){
+						console.log('拉到顶了，刷新数据');
+						setTimeout(function(){
+//							window.history.back();
+	//						open('goods-detail.html');
+							toTop=false;
+						},1000)
+					}
+					console.log(e.detail.y,e.detail.maxScrollY)
+				})
+			})(mui);
+			
+			
+			
+			mui('.mui-slider-group').on('tap','h4',function(){
+				open('index.html');
+			})
+			
+			
+			mui('.release')[0].addEventListener('tap',function(){
+				open('index.html');
+			},false);
+		</script>
+	</body>
+
+</html>
